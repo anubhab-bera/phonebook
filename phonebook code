@@ -1,0 +1,30 @@
+from tkinter import*
+window=Tk()
+window.title('phone directory')
+l={}
+fr1=Frame(window)
+fr2=Frame(window)
+fr1.pack()
+fr2.pack()
+l1=Label(fr1,text='Name: ')
+l1.pack(side='left')
+l2=Label(fr2,text='number')
+l2.pack(side='left')
+e1=Entry(fr1,width=30)
+e1.pack(side='right')
+e2=Entry(fr2,width='15')
+e2.pack(side="right")
+
+def save():
+    n=e1.get()
+    c=e2.get()
+    f=open('C:\Users\Anubhav\PycharmProjects\pythonProject\dailypractise.py.txt','a+')
+    f.seek(0)
+    f.close()
+    e1.delete(0,END)
+    e2.delete(0,END)
+
+bu=Button(window,text='save',command=save)
+bu.pack()
+
+window.mainloop()# phonebook
